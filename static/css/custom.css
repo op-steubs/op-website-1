@@ -1,0 +1,182 @@
+/* This must be the first line of the custom.css with other import rules */
+/* https://github.com/wirtzdan/logseq-paper-theme */
+/* @import url("https://cdn.jsdelivr.net/gh/wirtzdan/logseq-paper-theme@master/custom.css"); */
+
+/* You can also add other styles below to override the default theme values */
+
+/* You can toggle these variables between "block" (Visible) and "none" (Hidden) to show or hide different elements of the UI */
+:root {
+    /* --display-recent-pages: block;
+    --display-search-button: block;
+    --display-arrow-navigation: none;
+    --display-help-button: none;
+    /* From: https://github.com/pengx17/logseq-dev-theme */
+    --ls-block-bullet-active-color: green;
+    --ls-block-bullet-threading-width: 1px; 
+    --ls-left-sidebar-width: 160px;
+  }
+
+/* This block manipulates blocks that are currently being edited */
+/* See: https://github.com/pengx17/logseq-dev-theme/issues/8 */
+/* .editor-wrapper{
+    font-family: var(--ct-code-font-family);
+  } */
+
+
+/*==================================================*/     
+/* === dirty focus mode ====*/ 
+/* https://github.com/cannibalox/logseq-dark-hpx/blob/master/logseq-dirty-focus-mode.css */
+/*==================================================*/
+/* 
+:root {
+    --dfm-unfocused-opacity: 0.65; 
+    --dfm-darktheme-editing-color:hsl(115, 85%, 74%);
+    --dfm-darktheme-parent-block-color: hsl(73, 71%, 74%);
+    --dfm-whitetheme-editing-color: hsl(221, 100%, 60%);
+    --dfm-whitetheme-parent-block-color: hsl(207, 91%, 67%);
+}
+.dark-theme {
+    --dfm-editing-color:hsl(115, 85%, 74%);
+    --dfm-parent-block-color: hsl(73, 71%, 74%);
+}
+.white-theme {
+    --dfm-editing-color:hsl(212, 85%, 55%);
+    --dfm-parent-block-color: hsl(201, 88%, 65%);
+}
+.cp__sidebar-main-content .ls-block{
+    opacity: var(--dfm-unfocused-opacity);
+    filter:grayscale(50%)
+    }
+.cp__sidebar-main-content .ls-block:hover{
+    opacity: 1;
+    filter: grayscale(0%)
+    }
+.block-editor{
+    opacity:1;
+    filter: contrast(1) grayscale(0%);
+    color:var(--dfm-editing-color);
+    }
+.ls-block:focus-within{
+    opacity:1;
+    filter: grayscale(0%);
+    color:var(--dfm-parent-block-color);
+    }
+  */
+/*==================================================*/       
+/* === iconify external links ====*/ 
+/* https://github.com/cannibalox/logseq-dark-hpx/blob/master/logseq-iconify-external-links */
+/*==================================================*/
+a.external-link {border-bottom: 0px;}
+a.external-link:after {
+    display:inline-block;
+    content:"";
+    width: 21px;
+    height:16px;
+    background: 
+        transparent 
+        50% 200%/54% 
+        url('https://svgshare.com/i/SWJ.svg') no-repeat;
+        filter: invert(3%) sepia(100%) saturate(1920%) hue-rotate(0deg) brightness(1419%) contrast(249%);
+    }
+
+    
+/* Removes `TODO, DOING, DONE` test next to Checkboxes in the UI, per: https://bit.ly/31d3Zmc */
+/* .block-marker {
+    display: none;
+    } */
+
+/*  section div.flex.relative added for text blocks   
+    Using developer tools, using arrow tool to select text
+    and it will show the name of the division*/
+    /* .white-theme div.flex.relative {
+        font-family:'Roboto',sans-serif;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.00rem; 
+        color: black;
+      } */
+      /* .dark-theme div.flex.relative {
+        font-family:'Roboto',sans-serif;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.99rem; 
+        color: whitesmoke;
+      } */
+
+
+/* Hover Left Sidebar Like Notion
+https://discord.com/channels/725182569297215569/752845138148982877/909438496748482620 */
+/* #main-content.is-left-sidebar-open {
+    padding-left: 0;
+}
+.cp__sidebar-left-layout {
+    background-color: transparent;
+}
+.left-sidebar-inner {
+    background-color: var(--ls-secondary-background-color);
+    transform: translateX(-320px);
+    transition: transform 0.3s ease-in-out;
+    width: var(--ls-left-sidebar-width);
+}
+#sidebar-nav-wrapper {
+    max-width: 5vw;
+    overflow: visible;
+}
+#sidebar-nav-wrapper:hover .left-sidebar-inner {
+    transform: translateX(0);
+}
+.cp__sidebar-left-layout:before {
+    background-color: transparent;
+} */
+
+/* Hide Hypothesis plugin page icon per: https://discord.com/channels/725182569297215569/740582434961358848/914218237141602304 */
+#injected-ui-item-hypothesis-page-logseq-hypothesis { display: none }
+
+/* Checkbox style - https://discord.com/channels/725182569297215569/725182570131751005/914402928419278848 */
+.form-checkbox {
+    /* border: 1px solid black !important; */
+    border-radius: 2px !important; make rounded checkbox
+    /* height: 25px;
+    width: 25px; */
+    /* background: orange !important; */
+  }
+
+/* Hide Top bar when not hovered mouse
+https://discord.com/channels/725182569297215569/752845138148982877/917404617560711269 */
+/* div#head:hover {
+    opacity: 1; 
+  }
+  div#head {
+    opacity: 0;  
+  } */
+
+/* Dim completed tasks - https://discord.com/channels/725182569297215569/756886540038438992/916064827028439040 */
+/* .ls-block[data-refs-self~="\[\"done\"\,"]:not(:focus-within), .ls-block[data-refs-self~="\[\"done\"\]"]:not(:focus-within) {
+    opacity: 50%;
+    filter: saturate(0);
+    }
+    .ls-block[data-refs-self~="\[\"done\"\,"]:hover, .ls-block[data-refs-self~="\[\"done\"\]"]:hover {
+    opacity: 100%;
+    filter: saturate(100%);
+    } */
+
+/* Highlight DOING todo checkbox in hot pink: https://discord.com/channels/725182569297215569/725182570131751005/918180900490084353 */
+span.inline.doing > .form-checkbox {
+    outline: 2px solid hotpink;
+}
+/* span.inline.waiting > .form-checkbox {
+    outline: 1px solid light rgb(112, 1, 112);
+}
+span.inline.holding > .form-checkbox {
+    outline: 1px solid rgb(112, 1, 112);
+} */
+
+/* Blink the checkbox for DOING tasks: https://discord.com/channels/725182569297215569/725182570131751005/918189749603291147 */
+/* span.inline.doing > .form-checkbox {
+    animation: blinker 4s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+} */
